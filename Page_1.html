@@ -41,42 +41,50 @@
                 max-width: 100%;
                 border: 5px solid #8a2be2;
                 border-radius: 10px;
-            }
-      #board {
-                display: flex;
-                flex-wrap: wrap;
+         
+            } 
+      #foodGame {
                 width: 300px;
-                height: 300px;
                 margin: 0 auto;
+                text-align: center;
             }
-            .cell {
-                width: 100px;
-                height: 100px;
+
+            .food-option {
+                padding: 10px;
                 border: 1px solid #000;
-                display: flex;
-                align-items: center;
-                justify-content: center;
+                border-radius: 5px;
                 cursor: pointer;
-                font-size: 2em;
-            }     
+                margin: 5px;
+                display: inline-block;
+            }
+
+            .food-option:hover {
+                background-color: #ddd;
+            }
+
  </style>
  <script>
+
+            
             window.onload = function() {
-                let board = document.getElementById("board");
-                let currentPlayer = "X";
-                for(let i = 0; i < 9; i++) {
-                    let cell = document.createElement("div");
-                    cell.className = "cell";
-                    cell.onclick = function() {
-                        if(!this.textContent) {
-                            this.textContent = currentPlayer;
-                            currentPlayer = currentPlayer === "X" ? "O" : "X";
-                        }
+      
+                
+                let foods = ["Pizza", "Sushi", "Burger", "Pasta", "Ice Cream"];
+                let foodGame = document.getElementById("foodGame");
+                for(let i = 0; i < foods.length; i++) {
+                    let foodOption = document.createElement("div");
+                    foodOption.className = "food-option";
+                    foodOption.textContent = foods[i];
+                    foodOption.onclick = function() {
+                        alert("Your favorite food is " + foods[i] + "!");
                     };
-                    board.appendChild(cell);
+                    foodGame.appendChild(foodOption);
                 }
             };
-</script>
+ </script>
         <div id="board"></div>
+
+        <h2>What's your favorite food?</h2>
+        <div id="foodGame"></div>
     </body>
 </html>
