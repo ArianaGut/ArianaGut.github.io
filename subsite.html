@@ -1,1 +1,77 @@
 
+<html>
+
+<style>
+            body {
+                background-color: #fefbd8;
+                font-family: 'Courier New', Courier, monospace;
+                color: #005b96;
+            }
+            h1, h2, h3 {
+                color: #ff4500;
+            }
+            a {
+                color: #8a2be2;
+                text-decoration: none;
+                padding: 5px;
+                border-radius: 5px;
+                background-color: #7fffd4;
+                display: inline-block;
+                margin: 5px 2px;
+            }
+            a:hover {
+                text-decoration: underline;
+                background-color: #76eec6;
+            }
+            img {
+                max-width: 100%;
+                border: 5px solid #8a2be2;
+                border-radius: 10px;
+         
+            } 
+   #vacationGame {
+                width: 500px;
+                margin: 0 auto;
+                text-align: center;
+            }
+
+            .vacation-option {
+                padding: 20px;
+                border: 3px solid #000;
+                border-radius: 5px;
+                cursor: pointer;
+                margin: 10px;
+                display: inline-block;
+                font-size: 1.5em;
+                background-color: #7fffd4;
+            }
+
+            .vacation-option:hover {
+                background-color: #76eec6;
+            }
+
+            #vacationGameTitle {
+                text-align: center;
+            }
+</style>
+  <script>
+            window.onload = function() {
+                let spots = ["Hawaii", "Paris", "Tokyo", "New York", "Sydney"];
+                let vacationGame = document.getElementById("vacationGame");
+                for(let i = 0; i < spots.length; i++) {
+                    let vacationOption = document.createElement("div");
+                    vacationOption.className = "vacation-option";
+                    vacationOption.textContent = spots[i];
+                    vacationOption.onclick = function() {
+                        alert("Your favorite vacation spot is " + spots[i] + "!");
+                    };
+                    vacationGame.appendChild(vacationOption);
+                }
+            };
+</script>
+  <h2 id="vacationGameTitle">What's your favorite vacation spot?</h2>
+        <div id="vacationGame"></div>
+    <body>
+      <h1>Welcome to Subsite!  </h1>
+    </body>
+ <html>
